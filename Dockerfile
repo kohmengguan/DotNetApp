@@ -7,6 +7,10 @@ RUN apt-get update && \
     apt-get install -y wget && \
     rm -rf /var/lib/apt/lists/*
 
+RUN wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+
+RUN dpkg -i packages-microsoft-prod.deb
+
 RUN wget http://ftp.us.debian.org/debian/pool/main/i/icu/libicu57_57.1-6+deb9u4_amd64.deb
 
 RUN dpkg -i libicu57_57.1-6+deb9u4_amd64.deb
